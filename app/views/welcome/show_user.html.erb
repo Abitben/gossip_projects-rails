@@ -3,13 +3,22 @@
     <title>The Gossip Project</title>
   </head>
   <body>
-    <h1>Bienvenue <%= @first_name %> ! Ici, c'est ta page perso !</h1>
-    <h2> Les caractéristiques de ton profil sont les suivantes: </h2>
-    <br>
-    <p> Ton prénom : <%= @user.first_name %> !</p>
-    <p> Ton nom de famille : <%= @user.last_name %> !</p>
-    <p> Ta description : <%= @user.description %> !</p>
-    <p> Ton age : <%= @user.age%> !</p>
-    <p> Ton zip_code : <%= @user.city.zip_code%> !</p>
+    <div class="container">
+      <br>
+      <h1>Bienvenue <%= @first_name %> ! Ici, c'est ta page perso !</h1>
+      <br>
+      <h2> Les caractéristiques de ton profil sont les suivantes: </h2>
+      <br>
+      <div class="card">
+        <div class="card-header shadow">
+          <h5><%= @user.first_name %> <%= @user.last_name %></h5>
+        </div>
+        <div class="card-body shadow">
+          <p class="card-text">Ta bio : <%= @user.description %></p>
+          <p class="card-text">Ton age : <%= @user.age%> </p>
+          <p class="card-text">Ton zip_code <%= @user.city.zip_code%> </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

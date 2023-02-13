@@ -3,16 +3,17 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get '/contact', to: 'contact#show'
-
-  get '/team', to: 'team#show'
-
-  get'/welcome/:user_entry', to: 'welcome#show_user'
-
-  get'/gossip/:user_entry', to: 'gossip_page#gossip'
+  root 'welcome#welcome'
 
   get'/welcome', to: 'welcome#welcome'
 
-  root 'welcome#welcome'
+  get'/welcome/:user_entry', to: 'welcome#show_user'
+  
+  get '/contact', to: 'contact#show'
+
+  get '/team', to: 'team#show'  
+
+  get'/gossip/:id', to: 'gossip_page#gossip'
+
 
 end

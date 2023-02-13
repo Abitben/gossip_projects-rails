@@ -1,8 +1,9 @@
-h1{
-  margin: 48px 
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  font-family: 'Montserrat'
 }
 
-body{
-  color: blue;
+h1 {
+  font-weight:900 ;
 }
-

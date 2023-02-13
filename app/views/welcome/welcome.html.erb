@@ -3,39 +3,31 @@
     <title>The Gossip Project</title>
   </head>
   <body>
-    <p>BIENVENUE !</p>
-    <h1>C'est la page des potins !</h1>
-  
 
-    <% all_gossips.each_with_index do |item, index| %>
-    <hr class="rounded">
-    <p>Voici l'index du potin n°<%= index %></p>
-    <p>C'est le potin de <%= item.user.first_name %></p>
-    <p>Son titre est le suivant : <%= item.title %></p>
-    <hr class="rounded">
+    <div class="container">
+    <br>
+    <h1>BIENVENU(E) ! </h1>
+    <h2> Psst .. c'est la page des malversations !</h2>
+    <br>
+    </div>
+
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @all_gossips.each_with_index do |item, index| %>
+        <div class="col">
+          <div class="card ">
+            <div class="card shadow p-3 bg-white rounded" style="">
+              <div class="card-body">
+                <h5 class="card-title"><%= item.title %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"> de <%= item.user.first_name %> avec index n°<%= index %></h6>
+                <p class="card-text">Description empty</p>
+                <% link = "http://localhost:3000/gossip/" + index.to_s%>
+                <a href="<%= link %>" class="btn btn-primary">Lien vers le potin</a>
+              </div>
+            </div>
+          </div>
+        </div>
     <% end%>
-
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-<% all_gossips.each_with_index do |item, index| %>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= item.title %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"> de <%= item.user.first_name %> avec index n°<%= index %></h6>
-    <p class="card-text">Index n°<%= index %></p>
-    <% link = "http://localhost:3000/gossip/" + index.to_s%>
-    <a href="<%= link %>" class="card-link">Lien vers le potin</a>
-  </div>
-</div>
-<% end%>
-
-
+    </div>
   </body>
 </html>

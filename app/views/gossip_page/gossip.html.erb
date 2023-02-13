@@ -4,14 +4,16 @@
   </head>
 
   <body>
-    <p>BIENVENUE !</p>
+  <div class="container">
+    <h1>BIENVENUE !</h1>
+    <br>
     <p>Voici l'index du potin n°<%= id %></p>
     <p>Son titre est le suivant : <%= all_gossips[id].title %></p>
     <p>Son titre est le suivant : <%= all_gossips[id].content %></p>
-    <p>Le nom de l'utilisateur : <%= all_gossips[id].user.first_name %></p>
     <% name_user = all_gossips[id].user.first_name %>
     <% link = "http://localhost:3000/welcome/" + name_user %>
-    <a href="<%= link %>">Voici la page du potin en question</a>
+    <a href="<%= link %>">Voir le profil de son auteur <%= all_gossips[id].user.first_name %></p></a>
+  </div>
   </body>
 
 </html>

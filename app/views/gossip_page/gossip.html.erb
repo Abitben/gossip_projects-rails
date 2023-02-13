@@ -5,14 +5,21 @@
 
   <body>
   <div class="container">
+    <br>
     <h1>BIENVENUE !</h1>
     <br>
-    <p>Voici l'index du potin n°<%= id %></p>
-    <p>Son titre est le suivant : <%= all_gossips[id].title %></p>
-    <p>Son titre est le suivant : <%= all_gossips[id].content %></p>
-    <% name_user = all_gossips[id].user.first_name %>
-    <% link = "http://localhost:3000/welcome/" + name_user %>
-    <a href="<%= link %>">Voir le profil de son auteur <%= all_gossips[id].user.first_name %></p></a>
+    <div class="card">
+      <div class="card-header">
+        Voici l'index du potin n°<%= @id %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= @all_gossips[@id].title %></h5>
+        <p class="card-text">Son contenu est le suivant : <%= @all_gossips[@id].content %></p>
+        <% name_user = @all_gossips[@id].user.first_name %>
+        <% link = "http://localhost:3000/welcome/" + name_user %>
+        <a href="<%= link %>"class="btn btn-primary">Voir le profil de son auteur</a>
+      </div>
+    </div>
   </div>
   </body>
 

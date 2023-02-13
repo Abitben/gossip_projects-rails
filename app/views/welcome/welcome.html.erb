@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+  <body>
+    <p>BIENVENUE !</p>
+    <h1>C'est la page des potins !</h1>
+  
+
+    <% all_gossips.each_with_index do |item, index| %>
+    <hr class="rounded">
+    <p>Voici l'index du potin n°<%= index %></p>
+    <p>C'est le potin de <%= item.user.first_name %></p>
+    <p>Son titre est le suivant : <%= item.title %></p>
+    <hr class="rounded">
+    <% end%>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </body>
+</html>

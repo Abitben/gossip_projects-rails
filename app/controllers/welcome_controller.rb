@@ -9,7 +9,10 @@ class WelcomeController < ApplicationController
   
   
   def show_user
-    render :show_user, locals: {first_name: params[:user_entry]}
+    puts "*" * 30
+    puts user_to_display = User.find_by(first_name: params[:user_entry])
+    puts "*" * 30
+    render :show_user, locals: {first_name: params[:user_entry], user: user_to_display}
   end
 
 

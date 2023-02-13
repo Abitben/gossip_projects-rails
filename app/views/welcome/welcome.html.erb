@@ -15,18 +15,27 @@
     <hr class="rounded">
     <% end%>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br><br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<% all_gossips.each_with_index do |item, index| %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= item.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"> de <%= item.user.first_name %> avec index n°<%= index %></h6>
+    <p class="card-text">Index n°<%= index %></p>
+    <% link = "http://localhost:3000/gossip/" + index.to_s%>
+    <a href="<%= link %>" class="card-link">Lien vers le potin</a>
+  </div>
+</div>
+<% end%>
+
+
   </body>
 </html>

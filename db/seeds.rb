@@ -39,7 +39,7 @@ end
 
 20.times do
   gossip = Gossip.create!(
-    title: Faker::App.name,
+    title: Faker::App.name[3..14],
     content: Faker::Lorem.paragraph(sentence_count: 2),
     user_id: rand(1..10)
   )

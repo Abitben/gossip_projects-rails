@@ -15,5 +15,7 @@ Rails.application.routes.draw do
 
   get'/gossip/:id', to: 'gossip_page#gossip'
 
+  resources :gossips
+
 
 end

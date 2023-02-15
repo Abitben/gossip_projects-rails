@@ -14,9 +14,12 @@
           <h5><%= @user.first_name %> <%= @user.last_name %></h5>
         </div>
         <div class="card-body shadow">
+          <p class="card-text">Ton email : <%= @user.email%> </p>
           <p class="card-text">Ta bio : <%= @user.description %></p>
           <p class="card-text">Ton age : <%= @user.age%> </p>
-          <p class="card-text">Ton zip_code <%= @user.city.zip_code%> </p>
+          <p class="card-text">Le nom de la ville <%= @user.city.name%> </p>
+          <% link = "http://localhost:3000/cities/" + @user.city.name %>
+          <a href="<%= link %>"class="btn btn-primary">Voir les malversations de la ville <%= @user.city.name%></a>
         </div>
       </div>
     </div>

@@ -76,3 +76,4 @@ end
 
 gem "faker", "~> 3.1"
 gem "table_print", "~> 1.5"
+gem 'jquery-rails'

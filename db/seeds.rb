@@ -16,6 +16,7 @@ City.destroy_all
 
 10.times do 
   city = City.create!(
+    name: Faker::Address.city,
     zip_code: Faker::Address.zip_code
   )
 end
@@ -39,7 +40,7 @@ end
 
 20.times do
   gossip = Gossip.create!(
-    title: Faker::App.name[3..14],
+    title: Faker::Company.name[3..14],
     content: Faker::Lorem.paragraph(sentence_count: 2),
     user_id: rand(1..10)
   )
